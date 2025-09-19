@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
+import sdk from "@farcaster/frame-sdk";
 
 interface GameState {
   duckY: number;
@@ -23,6 +24,7 @@ const PIPE_SPEED = 2;
 export default function FlappyDuck() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const gameLoopRef = useRef<number>();
+  const [isSDKLoaded, setIsSDKLoaded] = useState(false);
   
   const [gameState, setGameState] = useState<GameState>({
     duckY: CANVAS_HEIGHT / 2,
@@ -32,6 +34,27 @@ export default function FlappyDuck() {
     gameStarted: false,
     gameOver: false,
   });
+
+  // Initialize Farcaster SDK
+  useEffect(() => {
+    const initializeSDK = async () => {
+      try {
+        const context = await sdk.context;
+        console.log("Farcaster context:", context);
+        
+        // Tell Farcaster the app is ready
+        sdk.actions.ready();
+        setIsSDKLoaded(true);
+        console.log("✅ Farcaster SDK initialized");
+      } catch (error) {
+        console.error("Error initializing Farcaster SDK:", error);
+        // Still set as loaded so the game works outside of Farcaster too
+        setIsSDKLoaded(true);
+      }
+    };
+
+    initializeSDK();
+  }, []);
 
   const resetGame = useCallback(() => {
     setGameState({
@@ -154,7 +177,7 @@ export default function FlappyDuck() {
 
     ctx.fillStyle = "#FFFFFF";
     ctx.font = "24px Arial";
-    ctx.fillText(`Score: ${gameState.score}`, 10, 30);
+    ctx.fillText(, 10, 30);
 
     if (gameState.gameOver) {
       ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
@@ -164,7 +187,7 @@ export default function FlappyDuck() {
       ctx.font = "32px Arial";
       ctx.textAlign = "center";
       ctx.fillText("Game Over!", CANVAS_WIDTH/2, CANVAS_HEIGHT/2 - 50);
-      ctx.fillText(`Score: ${gameState.score}`, CANVAS_WIDTH/2, CANVAS_HEIGHT/2);
+      ctx.fillText(, CANVAS_WIDTH/2, CANVAS_HEIGHT/2);
       ctx.fillText("Click to Restart", CANVAS_WIDTH/2, CANVAS_HEIGHT/2 + 50);
     }
 
@@ -179,6 +202,17 @@ export default function FlappyDuck() {
       ctx.fillText("Click to Start!", CANVAS_WIDTH/2, CANVAS_HEIGHT/2 + 50);
     }
   }, [gameState]);
+
+  if (!isSDKLoaded) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-blue-200">
+        <div className="text-center">
+          <div className="text-4xl mb-4">🦆</div>
+          <div className="text-xl text-blue-800">Loading Flappy Duck...</div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-blue-200 p-4">
