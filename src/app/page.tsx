@@ -2,11 +2,18 @@ import { Metadata } from "next";
 import FlappyDuck from "@/components/FlappyDuck";
 
 export const metadata: Metadata = {
-  title: "Flappy Duck - Farcaster Frame",
-  description: "Play Flappy Duck game in a Farcaster Frame",
+  title: "Flappy Duck - Farcaster Frame Game",
+  description: "Play Flappy Duck game in a Farcaster Frame! Click to make the duck jump and avoid pipes.",
   openGraph: {
-    title: "Flappy Duck",
-    description: "A fun Flappy Bird style game with a duck!",
+    title: "Flappy Duck - Farcaster Frame Game",
+    description: "A fun Flappy Bird style game with a duck! Click to play.",
+    images: ["https://flappy-duck-app.vercel.app/api/frame/image"],
+  },
+  other: {
+    "fc:frame": "vNext",
+    "fc:frame:image": "https://flappy-duck-app.vercel.app/api/frame/image",
+    "fc:frame:button:1": "🎮 Play Flappy Duck",
+    "fc:frame:post_url": "https://flappy-duck-app.vercel.app/api/frame",
   },
 };
 

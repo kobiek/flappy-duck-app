@@ -1,0 +1,17 @@
+{
+  "accountAssociation": {
+    "header": "eyJmaWQiOjEsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHhkNDZlOEYyMjRmYWYzMTRlNzM0NzY4YThkOWE4NDRmMGE2ZmNmYmNlIn0",
+    "payload": "eyJkb21haW4iOiJmbGFwcHktZHVjay1hcHAudmVyY2VsLmFwcCJ9",
+    "signature": "MHhkNDZlOEYyMjRmYWYzMTRlNzM0NzY4YThkOWE4NDRmMGE2ZmNmYmNl"
+  },
+  "frame": {
+    "name": "Flappy Duck",
+    "iconUrl": "https://flappy-duck-app.vercel.app/api/frame/image",
+    "homeUrl": "https://flappy-duck-app.vercel.app",
+    "imageUrl": "https://flappy-duck-app.vercel.app/api/frame/image",
+    "buttonTitle": "Play Flappy Duck",
+    "splashImageUrl": "https://flappy-duck-app.vercel.app/api/frame/image",
+    "splashBackgroundColor": "#87CEEB",
+    "webhookUrl": "https://flappy-duck-app.vercel.app/api/frame"
+  }
+}
