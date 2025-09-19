@@ -154,7 +154,7 @@ export default function FlappyDuck() {
 
     ctx.fillStyle = "#FFFFFF";
     ctx.font = "24px Arial";
-    ctx.fillText(, 10, 30);
+    ctx.fillText(`Score: ${gameState.score}`, 10, 30);
 
     if (gameState.gameOver) {
       ctx.fillStyle = "rgba(0, 0, 0, 0.7)";
@@ -164,7 +164,7 @@ export default function FlappyDuck() {
       ctx.font = "32px Arial";
       ctx.textAlign = "center";
       ctx.fillText("Game Over!", CANVAS_WIDTH/2, CANVAS_HEIGHT/2 - 50);
-      ctx.fillText(, CANVAS_WIDTH/2, CANVAS_HEIGHT/2);
+      ctx.fillText(`Score: ${gameState.score}`, CANVAS_WIDTH/2, CANVAS_HEIGHT/2);
       ctx.fillText("Click to Restart", CANVAS_WIDTH/2, CANVAS_HEIGHT/2 + 50);
     }
 
