@@ -1,8 +1,8 @@
 {
   "accountAssociation": {
-    "header": "eyJmaWQiOjEsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHhkNDZlOEYyMjRmYWYzMTRlNzM0NzY4YThkOWE4NDRmMGE2ZmNmYmNlIn0",
+    "header": "eyJmaWQiOjI0NzkyMSwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweGM0MUE0QzgzZjNDNjE4MWFENjY0N0Q5MGFkOWFFQ0ZCNTVEZUU2M2YifQ",
     "payload": "eyJkb21haW4iOiJmbGFwcHktZHVjay1hcHAudmVyY2VsLmFwcCJ9",
-    "signature": "MHhkNDZlOEYyMjRmYWYzMTRlNzM0NzY4YThkOWE4NDRmMGE2ZmNmYmNl"
+    "signature": "MHhiMDc0Mzc0Y2IzMTM1OTIwMTYzNjk1YjZmMjY0YjA1NWJiZDgxMGUyNjhjYWFlYjFmNDY3MzhiMzFiZTBjYjkyNmVmYjQwODc4ZjFjNmUxN2YxZDNmNGYzOTBmZjA4NmY2ZTA4YzllOTEwMDAwOGQ4MzM2N2M1OGI4MjYxNjQzNTFi"
   },
   "frame": {
     "name": "Flappy Duck",
